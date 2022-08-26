@@ -17,6 +17,7 @@ public class AddSubMult
 	public AddSubMult(double aa, double bb) {
 		a = aa;
 		b = bb;
+		check(a,b);
 	}
 	
 	public static double check(double c, double d)
@@ -53,7 +54,7 @@ public class AddSubMult
 		return r;
 	}
 public void print(){
-	System.out.printf("%.1f\n", r);
+	out.printf("%.1f\n", r);
 }
 
 }
