@@ -11,19 +11,16 @@ public class AddSubMult
 	private static double a;
 	private static double b;
 	public AddSubMult() {
-//		check(0.0, 0.0);
 		r = 0.0;
+		setVaria(0.0,0.0);
 	}
 	public AddSubMult(double aa, double bb) {
-		a = aa;
-		b = bb;
-		check(a,b);
+		setVaria(aa,bb);
 	}
 	
-	public void setCheck(double aa, double bb){
+	public void setVaria(double aa, double bb){
 		a = aa;
 		b=bb;
-		check(a,b);
 	}
 	
 	public static double check(double c, double d)
