@@ -20,6 +20,12 @@ public class AddSubMult
 		check(a,b);
 	}
 	
+	public void setCheck(double aa, double bb){
+		a = aa;
+		b=bb;
+		check(a,b);
+	}
+	
 	public static double check(double c, double d)
 	{
 		if(c>d){
