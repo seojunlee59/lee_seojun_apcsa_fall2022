@@ -19,11 +19,10 @@ public class FirstLastVowel
 		}
 		for(int i=0;i<stringlist.length; i+=1){
 			if(a.substring(0,1).equals(stringlist[i])){
-//				|| b.substring(1,1).equals(stringlist[i])
 				return "yes";
 			}
 			else if(a.substring(a.length()-1).equals(stringlist[i])) {
-				return "Ues";
+				return "yes";
 			}
 			else{
 				return "no";

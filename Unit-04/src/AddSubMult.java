@@ -11,12 +11,16 @@ public class AddSubMult
 	private static double a;
 	private static double b;
 	public AddSubMult() {
-//		check(0.0, 0.0);
 		r = 0.0;
+		setVaria(0.0,0.0);
 	}
 	public AddSubMult(double aa, double bb) {
+		setVaria(aa,bb);
+	}
+	
+	public void setVaria(double aa, double bb){
 		a = aa;
-		b = bb;
+		b=bb;
 	}
 	
 	public static double check(double c, double d)
@@ -53,7 +57,7 @@ public class AddSubMult
 		return r;
 	}
 public void print(){
-	System.out.printf("%.1f\n", r);
+	out.printf("%.1f\n", r);
 }
 
 }
