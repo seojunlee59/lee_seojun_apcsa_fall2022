@@ -11,8 +11,7 @@ public class Deck {
 		cards = new ArrayList<Card>();
 		for(int i=0; i<ranks.size(); i++) {
 			for(int j=0; j<suits.size(); j++) {
-				int cardIndex = (suits.size())*i + j;
-				cards.add(cardIndex, new Card(ranks.get(i), suits.get(j), values.get(i)));
+				cards.add(new Card(ranks.get(i), suits.get(j), values.get(i)));
 
 			}
 		}
@@ -30,15 +29,17 @@ public class Deck {
 		return size;
 	}
 
-	public void shuffle() {
-		int j=0;
-		for(int i=cards.size()-1; i>=0; i--) {
-			j = (int)(Math.random()*i);
-			Card temp = cards.get(i);
-			cards.set(i, cards.get(j));
-			cards.set(j,  temp);
-		}
-	}
+	 public void shuffle() {
+		 for (int k = cards.size() - 1; k > 0; k--) {
+			int howMany = k + 1;
+			int start = 0;
+			int randPos = (int) (Math.random() * howMany) + start;
+			Card temp = cards.get(k);
+			cards.set(k, cards.get(randPos));
+			cards.set(randPos, temp);
+		 }
+		  size = cards.size();
+	 }
 
 	public Card deal() {
 		if(isEmpty()) {
