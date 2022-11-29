@@ -153,9 +153,10 @@ public class Picture extends SimplePicture
 	  Pixel[][] pixels = this.getPixels2D();
 	  for(Pixel[] x : pixels) {
 		  for(Pixel y : x) {
-			  y.setRed((y.getRed()+y.getGreen()+y.getBlue())/3);
-			  y.setGreen((y.getRed()+y.getGreen()+y.getBlue())/3);
-			  y.setBlue((y.getRed()+y.getGreen()+y.getBlue())/3);
+			  int q = (y.getRed()+y.getGreen()+y.getBlue())/3;
+			  y.setRed(q);
+			  y.setGreen(q);
+			  y.setBlue(q);
 		  }
 	  }
   }
@@ -212,7 +213,7 @@ public class Picture extends SimplePicture
 	  Pixel[][] pixels = this.getPixels2D();
 	  Pixel leftPixel = null;
       Pixel rightPixel = null;
-      for(int i=116;i<245;i++) {
+      for(int i=116;i<pixels.length-1;i++) {
     	  for(int j=0;j<i;j++) {
     		  leftPixel = pixels[i][j];
     		  rightPixel = pixels[j][i];
@@ -338,9 +339,10 @@ public class Picture extends SimplePicture
   {
     Picture flower1 = new Picture("src/images/flower1.jpg");
     Picture flower2 = new Picture("src/images/flower2.jpg");
+    Picture snow = new Picture("src/images/snowman.jpg");
     this.copy(flower1,0,57);
     this.copy(flower2,251,296);
-    this.copy(flower1,200,123);
+    this.copy(snow, 200, 123);
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
     this.copy(flowerNoBlue,323,12);
